@@ -4,10 +4,10 @@ import { Rate } from "antd"
 import { ItemWrapper } from "./style"
 
 const RoomItem = memo(props => {
-	const { itemData } = props
+	const { itemData,itemWidth = "48%" } = props
 
 	return (
-		<ItemWrapper verifyColor={itemData?.verify_info?.text_color || "#39576a"}>
+		<ItemWrapper verifyColor={itemData?.verify_info?.text_color || "#39576a"} itemWidth={itemWidth}>
 			<div className="inner">
 				<div className="cover">
 					<img src={itemData.picture_url} alt="" />
