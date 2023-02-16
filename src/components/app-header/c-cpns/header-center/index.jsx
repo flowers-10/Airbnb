@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react"
+import React, { memo } from "react"
 import { CenterWrapper } from "./style"
 import IconSearchBar from "@/assets/svg/icon-search-bar"
 

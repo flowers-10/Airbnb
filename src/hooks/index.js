@@ -1,4 +1,4 @@
-import useScrollTop from "./hooks/useScrollTop";
+eximport useScrollTop from "./hooks/useScrollTop";
 
 export {
   useScrollTop
