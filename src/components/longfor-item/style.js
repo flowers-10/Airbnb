@@ -10,6 +10,7 @@ export const ItemWrapper = styled.div`
   }
   .cover {
     width: 100%;
+    border-radius: 8px;
   }
   .bg-cover {
     position: absolute;
@@ -17,6 +18,7 @@ export const ItemWrapper = styled.div`
     right: 8px;
     bottom: 0;
     height: 60%;
+    border-radius: 8px;
     background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0) 3%, rgb(0, 0, 0) 100%)
   }
   .info {

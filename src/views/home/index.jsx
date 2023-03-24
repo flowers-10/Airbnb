@@ -30,11 +30,11 @@ const Home = memo(() => {
 		<HomeWrapper>
 			<HomeBanner></HomeBanner>
 			<div className="content">
-				{/* {isEmptyO(disCountInfo) && <HomeSectionV2 infoData={disCountInfo} />} */}
-				{/* {isEmptyO(hotRecommendInfo) && <HomeSectionV2 infoData={hotRecommendInfo} />} */}
+				{isEmptyO(disCountInfo) && <HomeSectionV2 infoData={disCountInfo} />}
+				{isEmptyO(hotRecommendInfo) && <HomeSectionV2 infoData={hotRecommendInfo} />}
 				{isEmptyO(longforInfo) && <HomeLongfor infoData={longforInfo}/>}
-				{/* {isEmptyO(goodPriceInfo) && <HomeSectionV1 infoData={goodPriceInfo} />} */}
-				{/* {isEmptyO(highScoreInfo) && <HomeSectionV1 infoData={highScoreInfo} />} */}
+				{isEmptyO(goodPriceInfo) && <HomeSectionV1 infoData={goodPriceInfo} />}
+				{isEmptyO(highScoreInfo) && <HomeSectionV1 infoData={highScoreInfo} />}
 			</div>
 		</HomeWrapper>
 	)
