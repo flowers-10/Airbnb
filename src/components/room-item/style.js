@@ -5,6 +5,7 @@ export const ItemWrapper = styled.div`
 	width: ${props => props.itemWidth};
 	padding: 8px;
 	margin: 8px 0;
+	flex-shrink: 0;
 
 	.rate {
 		li {
