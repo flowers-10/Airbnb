@@ -5,11 +5,13 @@ import EntireRooms from './c-cpns/entire-rooms'
 import { EntireWrapper } from './style'
 
 const Entire = memo(() => {
+  // 发送网络请求，获取数据，保存页码
+
   return (
     <EntireWrapper>
       <EntireFilter/>
-      <EntireRooms/>
-      <EntirePagination/>
+      <EntireRooms roomList/>
+      <EntirePagination currentPage/>
     </EntireWrapper>
   )
 })

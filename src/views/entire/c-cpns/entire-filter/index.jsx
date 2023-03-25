@@ -31,7 +31,7 @@ const EntireFilter = memo(props => {
 							key={index}
 							onClick={e => itemClickHandle(item)}
 						>
-							{item}{" "}
+							{item}
 						</div>
 					)
 				})}
