@@ -1,28 +1,19 @@
 import React, { memo, useEffect } from "react"
+import { useDispatch } from "react-redux"
 import EntireFilter from "./c-cpns/entire-filter"
 import EntirePagination from "./c-cpns/entire-pagination"
 import EntireRooms from "./c-cpns/entire-rooms"
 import { EntireWrapper } from "./style"
-import { useDispatch, useSelector } from "react-redux"
-import { fetchHomeDataAction } from "@/store/modules/home"
+import { fetchEntireDataAction } from "@/store/modules/entire/actionCreators"
 
 const Entire = memo(() => {
 	// 发送网络请求，获取数据，保存页码
-	const dispatch = useDispatch()
 
+	const dispatch = useDispatch()
 	useEffect(() => {
-		dispatch(fetchHomeDataAction())
+		dispatch(fetchEntireDataAction())
 	}, [dispatch])
 
-	const { currentPage, roomList, totalCount } = useSelector(state => {
-		return {
-			currentPage: state.entire.currentPage,
-			roomList: state.entire.roomList,
-			totalCount: state.entire.totalCount,
-		}
-	})
-
-  console.log(currentPage,roomList,totalCount);
 
 	return (
 		<EntireWrapper>
