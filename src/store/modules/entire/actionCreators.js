@@ -28,10 +28,11 @@ export const fetchEntireDataAction = (page = 0) => {
     dispatch(changeLoadingAction(true))
 
     const res = await getEntireRoomList(page * 20)
+    // console.log(res);
     dispatch(changeLoadingAction(false))
     // 保存数据
     dispatch(changeCurrentPageAction(page))
-    dispatch(changeTotalCountAction(res.totalCount))
-    dispatch(changeRoomListAction(res.list))
+    dispatch(changeTotalCountAction(res.data.totalCount))
+    dispatch(changeRoomListAction(res.data.list))
   }
 }

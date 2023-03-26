@@ -1,4 +1,3 @@
-import PropTypes from "prop-types"
 import React, { memo } from "react"
 import { FilterWrapper } from "./style"
 import filterData from "@/assets/data/filter_data.json"
@@ -40,6 +39,5 @@ const EntireFilter = memo(props => {
 	)
 })
 
-EntireFilter.propTypes = {}
 
 export default EntireFilter

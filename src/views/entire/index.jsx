@@ -17,9 +17,9 @@ const Entire = memo(() => {
 
 	return (
 		<EntireWrapper>
-			<EntireFilter />
-			<EntireRooms roomList />
-			<EntirePagination currentPage />
+			<EntireFilter/>
+			<EntireRooms/>
+			<EntirePagination/>
 		</EntireWrapper>
 	)
 })
