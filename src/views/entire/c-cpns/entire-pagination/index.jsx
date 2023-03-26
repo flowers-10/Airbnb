@@ -16,8 +16,10 @@ const EntirePagination = memo(props => {
   // 事件处理逻辑
   const dispatch = useDispatch()
   function pageChangeHandle(page,pageSize) {
+    // 回到顶部
+    window.scrollTo(0,0)
     // 更新最新页码 redux => currentPages
-    console.log(page);
+    // console.log(page);
     // dispatch(changeCurrentPageAction(page-1))
     dispatch(fetchEntireDataAction(page-1))
   }
