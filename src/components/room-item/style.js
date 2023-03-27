@@ -65,6 +65,37 @@ export const ItemWrapper = styled.div`
         }
       }
     }
+		.indicator {
+      position: absolute;
+      z-index: 9;
+      width: 30%;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      margin: 0 auto;
+      .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 14.28%;
+        .dot {
+          width: 6px;
+          height: 6px;
+          background-color: rgba(255, 255, 255, 0.8);
+          border-radius: 50%;
+          &.active {
+            width: 9px;
+            height: 9px;
+						background-color: rgba(255, 255, 255);
+
+          }
+					&.activeSmall {
+						width: 4px;
+            height: 4px;
+					}
+        }
+      }
+    }
 	}
 
 	.desc {

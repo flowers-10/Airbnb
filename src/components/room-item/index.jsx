@@ -6,13 +6,24 @@ import { Carousel } from "antd"
 import IconArrowLeft from "@/assets/svg/icon-arrow-left"
 import IconArrowRight from "@/assets/svg/icon-arrow-right"
 import { useRef } from "react"
+import Indicator from "@/base-ui/indicator"
+import { useState } from "react"
+import classNames from "classnames"
 
 const RoomItem = memo(props => {
 	const { itemData, itemWidth = "48%" } = props
-	const sliderRef  = useRef()
-		// 处理事件逻辑
+	const [selectIndex, setSelectIndex] = useState(0)
+	const sliderRef = useRef()
+	// 处理事件逻辑
 	function controlClickHandle(isRight = true) {
 		isRight ? sliderRef.current.next() : sliderRef.current.prev()
+
+		// 拿到最新的索引 
+		let newIndex =isRight ? selectIndex + 1 : selectIndex - 1
+		const len = itemData.picture_urls.length
+		if(newIndex  <0) newIndex = len - 1
+		if(newIndex > len -1) newIndex  = 0
+		setSelectIndex(newIndex)
 	}
 
 	return (
@@ -21,13 +32,24 @@ const RoomItem = memo(props => {
 				<div className="slider">
 					<div className="control">
 						<div className="btn left" onClick={e => controlClickHandle(false)}>
-							<IconArrowLeft width="30" height="30"/>
+							<IconArrowLeft width="30" height="30" />
 						</div>
 						<div className="btn right" onClick={e => controlClickHandle(true)}>
-							<IconArrowRight width="30" height="30"/>
+							<IconArrowRight width="30" height="30" />
 						</div>
 					</div>
-					<Carousel dots={false}  ref={sliderRef}>
+					<div className="indicator">
+						<Indicator selectIndex={selectIndex}>
+							{itemData?.picture_urls?.map((item, index) => {
+								return (
+									<div className="item" key={index}>
+										<span className={classNames("dot", { active: selectIndex === index, activeSmall:selectIndex - 3 === index || selectIndex+3 === index })}></span>
+									</div>
+								)
+							})}
+						</Indicator>
+					</div>
+					<Carousel dots={false} ref={sliderRef}>
 						{itemData?.picture_urls?.map(item => {
 							return (
 								<div className="cover" KEY={item}>
