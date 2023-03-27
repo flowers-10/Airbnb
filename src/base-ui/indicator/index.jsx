@@ -7,8 +7,8 @@ const Indicator = memo((props) => {
 
   useEffect(() => {
     const selectItemEl = scrollRef.current.children[selectIndex]
-    const selectItemWidth = selectItemEl.clientWidth
-    const selectItemOffset = selectItemEl.offsetLeft
+    const selectItemWidth = selectItemEl?.clientWidth
+    const selectItemOffset = selectItemEl?.offsetLeft
 
     const scrollElWidth = scrollRef.current.clientWidth
     const scrollElScroll = scrollRef.current.scrollWidth
