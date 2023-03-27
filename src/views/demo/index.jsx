@@ -3,7 +3,7 @@ import React, { memo, useState } from "react"
 import { DemoWrapper } from "./sytle"
 
 const Demo = memo(() => {
-	const names = ["Avb", "assed", "qwe", "Ers", "zxc"]
+	const names = ["Avb", "assed", "qwe", "Ers", "zxc","dfdd","aaa","wwww","eee"]
 	const [selectIndex, setSelectIndex] = useState(0)
 	function toggleClickHandle(isNext = true) {
 		let newIndex = isNext ? selectIndex + 1 : selectIndex - 1
