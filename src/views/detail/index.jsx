@@ -1,9 +1,11 @@
-import React, { memo } from 'react'
+import React, { memo } from "react"
+import { useSelector } from "react-redux"
 
 const Detail = memo(() => {
-  return (
-    <div>Detail</div>
-  )
+	const { detailInfo } = useSelector(state => ({
+		detailInfo: state.detail.detailInfo,
+	}))
+	return <div>{detailInfo.name}</div>
 })
 
 export default Detail

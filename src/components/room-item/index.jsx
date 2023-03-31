@@ -11,7 +11,7 @@ import { useState } from "react"
 import classNames from "classnames"
 
 const RoomItem = memo(props => {
-	const { itemData, itemWidth = "48%" } = props
+	const { itemData, itemWidth = "48%",itemClick } = props
 	const [selectIndex, setSelectIndex] = useState(0)
 	const sliderRef = useRef()
 	// 处理事件逻辑
@@ -24,6 +24,11 @@ const RoomItem = memo(props => {
 		if (newIndex < 0) newIndex = len - 1
 		if (newIndex > len - 1) newIndex = 0
 		setSelectIndex(newIndex)
+	}
+
+	function itemClickHanlde() {
+		// console.log(itemData);
+		if(itemClick) itemClick(itemData)
 	}
 
 	const pictureElement = (
@@ -71,7 +76,7 @@ const RoomItem = memo(props => {
 	)
 
 	return (
-		<ItemWrapper verifyColor={itemData?.verify_info?.text_color || "#39576a"} itemWidth={itemWidth}>
+		<ItemWrapper verifyColor={itemData?.verify_info?.text_color || "#39576a"} itemWidth={itemWidth} onClick={itemClickHanlde }>
 			<div className="inner">
 				{ itemData.picture_urls ? sliderElement :pictureElement }
 				<div className="desc">{itemData.verify_info.messages.join("·")}</div>
