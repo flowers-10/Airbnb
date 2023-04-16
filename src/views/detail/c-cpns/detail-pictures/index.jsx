@@ -15,7 +15,7 @@ const DetailPictures = memo(props => {
 		<PicturesWrapper>
 			<div className="pictures">
 				<div className="left">
-					<div className="item">
+					<div className="item" onClick={e => setShowBrower(true)}>
 						<img src={detailInfo.picture_urls?.[0]} alt="" />
 						<div className="cover"></div>
 					</div>
@@ -23,7 +23,7 @@ const DetailPictures = memo(props => {
 				<div className="right">
 					{detailInfo?.picture_urls?.slice(1, 5).map(item => {
 						return (
-							<div className="item" key={item}>
+							<div className="item" key={item} onClick={e => setShowBrower(true)}>
 								<img src={item} alt="" />
 								<div className="cover"></div>
 							</div>
@@ -35,7 +35,7 @@ const DetailPictures = memo(props => {
 			<div className="show-btn" onClick={e => setShowBrower(true)}>
 				显示照片
 			</div>
-			{showBrowser && <PictureBrowser />}
+			{showBrowser && <PictureBrowser pictureUrls={detailInfo.picture_urls} closeClick={e => setShowBrower(false)} />}
 		</PicturesWrapper>
 	)
 })
