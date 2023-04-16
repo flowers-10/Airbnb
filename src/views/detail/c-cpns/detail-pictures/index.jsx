@@ -8,6 +8,7 @@ import { useState } from "react"
 const DetailPictures = memo(props => {
 	// 定义组件内部的状态
 	const [showBrowser, setShowBrower] = useState(false)
+	
 	const { detailInfo } = useSelector(state => ({
 		detailInfo: state.detail.detailInfo,
 	}))
