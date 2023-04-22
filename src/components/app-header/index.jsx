@@ -26,6 +26,7 @@ const AppHeader = memo(props => {
 				</div>
 				<SearchAreaPlaceholder />
 			</div>
+      <div className="cover"></div>
 		</HeaderWrapper>
 	)
 })
