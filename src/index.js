@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
 	// <React.StrictMode>
 	<Provider store={store}>
-		<Suspense fallback={<div>loading...</div>}>
+		<Suspense fallback={<div>loading...</div>}>{}
 			<BrowserRouter>
 				<ThemeProvider theme={theme}>
 					<App />
